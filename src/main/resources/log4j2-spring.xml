@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <JsonLayout objectMessageAsJsonObject="true" properties="true" compact="true" eventEol="true">
+                <KeyValuePair key="timestamp" value="$${event:Timestamp}"/>
+            </JsonLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+        <Logger name="org.springframework.boot.actuate.endpoint.jmx" level="warn"/>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>

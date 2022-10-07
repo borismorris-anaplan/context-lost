@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: context-lost
+  sleuth:
+    trace-id128: true
+    sampler:
+      rate: 1000
+    baggage:
+      correlation-enabled: true
+      remote-fields:
+        - X-My-Baggage
+      correlation-fields:
+        - X-My-Baggage
+      tag-fields:
+        - X-My-Baggage
+  main:
+    banner-mode: "off"
+    lazy-initialization: true
